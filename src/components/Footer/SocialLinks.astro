@@ -1,21 +1,27 @@
 ---
+import envelopeIcon from './assets/envelope.svg?raw';
+import linkedinIcon from './assets/linkedin.svg?raw';
+
 const socialLinks = [
     {
-        iconColor: '#0077B5',
-        iconPath: "/icons/linkedin.svg",
+        color: '#0077B5',
+        icon: linkedinIcon,
+        topMargin: '-3px',
         url: 'https://www.linkedin.com/in/antoniukvalentyna/'
     },
     {
-        iconColor: '#aa381e',
-        iconPath: "/icons/envelope.svg",
+        color: '#aa381e',
+        icon: envelopeIcon,
         url: 'mailto:antoniuk.valentyna@gmail.com'
     }
 ];
 ---
 <ul>
     {
-        socialLinks.map(link => (<li style={`--before-color: ${link.iconColor};`}><a target="_blank" rel="nofollow noopener noreferrer external" href={link.url}>
-            <img class="icon" src={link.iconPath}>
+        socialLinks.map(link => (<li style={`--before-color: ${link.color};`}><a target="_blank" rel="nofollow noopener noreferrer external" href={link.url}>
+            <i style={`position: relative; display: flex; top: ${link.topMargin || 0}`}>
+                <Fragment class="icon" set:html={link.icon}/>
+            </i>
         </a></li>))
     }
 </ul>
@@ -28,31 +34,24 @@ const socialLinks = [
       a {
         width: 40px;
         height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #262626;
         background-color: #fff;
         text-align: center;
         line-height: 40px;
         font-size: 20px;
         margin: 0 10px;
-        display: block;
         border-radius: 50%;
         position: relative;
         overflow: hidden;
         border: 2px solid #000;
         z-index: 1;
-        .icon {
-          width: 20px;
-          height: 20px;
-          position: relative;
-          color: #262626;
-          transition: .5s;
-          z-index: 3;
-          margin-top: 7px;
-        }
-        &:hover .icon {
-          transform: scale(1.2);
-        }
-        &:hover .icon path {
+        transition: .5s;
+        &:hover {
           color: #fff;
+          border-color: var(--before-color);
         }
         &:before {
           content: "";
@@ -63,7 +62,7 @@ const socialLinks = [
           height: 100%;
           background: var(--before-color);
           transition: .5s;
-          z-index: 2;
+          z-index: -1;
         }
         &:hover:before {
           top: 0;
