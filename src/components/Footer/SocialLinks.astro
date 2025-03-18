@@ -1,20 +1,22 @@
 ---
 const socialLinks = [
     {
-        iconClass:"fab fa-linkedin-in icon",
+        iconColor: '#0077B5',
+        iconPath: "/icons/linkedin.svg",
         url: 'https://www.linkedin.com/in/antoniukvalentyna/'
     },
     {
-        iconClass:"fab fa-google-plus-g icon",
+        iconColor: '#aa381e',
+        iconPath: "/icons/envelope.svg",
         url: 'mailto:antoniuk.valentyna@gmail.com'
     }
 ];
 ---
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
 <ul>
     {
-        socialLinks.map(link => (<li><a target="_blank" rel="nofollow noopener noreferrer external" href={link.url}><i class={link.iconClass} /></a></li>))
+        socialLinks.map(link => (<li style={`--before-color: ${link.iconColor};`}><a target="_blank" rel="nofollow noopener noreferrer external" href={link.url}>
+            <img class="icon" src={link.iconPath}>
+        </a></li>))
     }
 </ul>
 
@@ -38,14 +40,19 @@ const socialLinks = [
         border: 2px solid #000;
         z-index: 1;
         .icon {
+          width: 20px;
+          height: 20px;
           position: relative;
           color: #262626;
           transition: .5s;
           z-index: 3;
+          margin-top: 7px;
         }
         &:hover .icon {
-          color: #fff;
           transform: scale(1.2);
+        }
+        &:hover .icon path {
+          color: #fff;
         }
         &:before {
           content: "";
@@ -54,24 +61,12 @@ const socialLinks = [
           left: 0;
           width: 100%;
           height: 100%;
-          background: #f00;
+          background: var(--before-color);
           transition: .5s;
           z-index: 2;
         }
         &:hover:before {
           top: 0;
-        }
-        &:nth-child(1):before {
-          background: #3b5999;
-        }
-        &:nth-child(2):before {
-          background: #55acee;
-        }
-        &:nth-child(3):before {
-          background: #0077b5;
-        }
-        &:nth-child(4):before {
-          background: #dd4b39;
         }
       }
     }
