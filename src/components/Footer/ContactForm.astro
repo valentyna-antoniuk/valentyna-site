@@ -1,0 +1,22 @@
+<form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <!-- Hidden field to prevent bots -->
+  <div style="display: none;">
+    <input type="text" name="bot-field" />
+  </div>
+
+  <h2>Contact Me</h2>
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" required />
+
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" required />
+
+  <label for="message">Message</label>
+  <textarea id="message" name="message" rows="4" required></textarea>
+
+  <!-- Add a submit button -->
+  <button type="submit">Send Message</button>
+
+  <!-- Hidden inputs for form metadata -->
+  <input type="hidden" name="form-name" value="contact" />
+</form>
