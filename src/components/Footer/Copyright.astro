@@ -1,0 +1,48 @@
+---
+const heartCode = '\u{2764}\u{FE0F}';
+const uaCode = '\u{1F1FA}\u{1F1E6}';
+
+const currentYear = new Date().getFullYear();
+---
+
+<div>
+    <p>
+        Made with {heartCode}
+        <a href="https://helpukraine.center/" target="_blank" title="Check if you can help">in Ukraine</a>
+        <span>{uaCode}</span>
+    </p>
+
+    <p>&#169; {currentYear} Valentyna Antoniuk | All Rights Reserved</p>
+</div>
+
+<style lang="scss">
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+    a {
+      cursor: help;
+    }
+    p:first-child {
+      position: relative;
+      span {
+        opacity: 0;
+        right: 0;
+        position: absolute;
+        transition: .5s;
+        font-size: 22px;
+        margin-left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &:hover {
+        span {
+          opacity: 1;
+          right: -30px;
+        }
+      }
+    }
+</style>
