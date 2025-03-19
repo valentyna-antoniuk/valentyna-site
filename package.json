@@ -2,14 +2,29 @@
   "name": "valentyna-site",
   "type": "module",
   "version": "0.0.1",
+  "license": "UNLICENSED",
+  "author": {
+    "email": "antoniuk.valentyna@gmail.com",
+    "name": "Valentyna Antoniuk"
+  },
+  "description": "A personal portfolio and CV showcasing my skills and experience as a Front-End Developer",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "prepare": "husky",
+    "pre-commit": "npx prettier . --write"
   },
   "dependencies": {
     "astro": "5.4.2",
+    "install": "0.13.0",
+    "npm": "11.2.0",
     "sass": "1.85.1"
+  },
+  "devDependencies": {
+    "husky": "9.1.7",
+    "prettier": "3.5.3",
+    "prettier-plugin-astro": "0.14.1"
   }
 }

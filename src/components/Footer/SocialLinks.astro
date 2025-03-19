@@ -9,17 +9,17 @@ const socialLinks = [
     Icon: EnvelopeIcon,
     url: "mailto:antoniuk.valentyna@gmail.com",
   },
-    {
-        color: "#0077B5",
-        Icon: LinkedinIcon,
-        topMargin: "-4px",
-        url: "https://www.linkedin.com/in/antoniukvalentyna/",
-    },
-    {
-        color: "#000",
-        Icon: GithubIcon,
-        url: "https://github.com/valentyna-antoniuk",
-    },
+  {
+    color: "#0077B5",
+    Icon: LinkedinIcon,
+    topMargin: "-4px",
+    url: "https://www.linkedin.com/in/antoniukvalentyna/",
+  },
+  {
+    color: "#000",
+    Icon: GithubIcon,
+    url: "https://github.com/valentyna-antoniuk",
+  },
 ];
 ---
 
@@ -32,10 +32,8 @@ const socialLinks = [
           rel="nofollow noopener noreferrer external"
           href={link.url}
         >
-          <span
-            style={`--topMargin: ${link.topMargin || 0}`}
-          >
-              <link.Icon class="icon" />
+          <span style={`--topMargin: ${link.topMargin || 0}`}>
+            <link.Icon class="icon" />
           </span>
         </a>
       </li>
@@ -87,7 +85,7 @@ const socialLinks = [
         .icon {
           position: relative;
           display: flex;
-          margin-top: var(--topMargin)
+          margin-top: var(--topMargin);
         }
       }
     }
