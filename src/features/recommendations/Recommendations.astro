@@ -1,0 +1,43 @@
+---
+import Card from "./Card.astro";
+import data from "./data.json";
+---
+
+<div class="wave-pattern"></div>
+<section>
+  <div class="content-container">
+    <h2 style="text-align: center; color: #fff;">Recommendations</h2>
+    <div class="recommendations">
+      {data.map((review) => <Card review={review} />)}
+    </div>
+  </div>
+  <div class="wave-pattern bottom"></div>
+</section>
+
+<style>
+  section {
+    background: #ffb6c1;
+    position: relative;
+    padding: 50px 0 80px;
+  }
+  .recommendations {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 16px;
+  }
+  .wave-pattern {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0 10 Q 25 0, 50 10 T 100 10 V20 H0 Z" fill="%23ffb6c1"/></svg>')
+      repeat-x;
+    background-size: 100px auto;
+    height: 20px;
+    position: relative;
+    z-index: 1;
+    &.bottom {
+      background-size: 100px auto;
+      transform: scaleY(-1);
+      position: absolute;
+      bottom: -20px;
+      width: 100%;
+    }
+  }
+</style>
