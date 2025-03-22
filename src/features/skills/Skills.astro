@@ -1,0 +1,76 @@
+---
+import Button from "../../components/Button.astro";
+import Readme from "./README.mdx";
+---
+
+<section>
+  <div class="content-container">
+    <h2>Skills & Technologies</h2>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <div class="skills">
+        <Readme />
+      </div>
+      <div class="more-skills">
+        Need expertise in a specific technology?
+        <b>Let’s connect!</b>
+        <Button
+          firstColor="#7eb3ff"
+          secondColor="#758cff"
+          data-skills-focus-button>Request a CV</Button
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+  const button = document.querySelector("[data-skills-focus-button]");
+
+  button.addEventListener("click", () => {
+    const element = document.getElementById("message");
+    element?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "nearest",
+    });
+    element.focus({ preventScroll: true });
+    // if (target.length) {
+    //     $('html,body').animate({
+    //         scrollTop: target.offset().top
+    //     }, 1000, function(){ // function to focus here
+    //         $("#comment-textarea").focus();
+    //     });
+    //     return false;
+    // }
+    //
+    // document.getElementById("message").focus();
+  });
+</script>
+
+<style>
+  section {
+    padding: 50px 0 90px;
+    bottom: -20px;
+    position: relative;
+    background: radial-gradient(#b6e1ff 5%, transparent 10%) 0 0 / 30px 30px;
+  }
+  .skills {
+    gap: 16px;
+    flex: 2;
+    h4 {
+      margin-top: 16px;
+      margin-bottom: 5px;
+      font-size: 22px;
+    }
+  }
+  .more-skills {
+    background: #fff;
+    border: 3px solid #b6e1ff;
+    border-radius: 15px;
+    padding: 30px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+</style>
