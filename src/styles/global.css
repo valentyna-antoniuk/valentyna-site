@@ -16,7 +16,12 @@ b {
   }
 }
 
+h1 {
+  font-family: "Bungee", serif;
+}
+
 h2 {
   font-size: 45px;
   margin-bottom: 34px;
+  font-family: "Bungee", serif;
 }
