@@ -1,5 +1,71 @@
 ---
 
 ---
+<section>
+    <div class="content-container">
+    <div class="content">
+        <h1>Valentyna Antoniuk</h1>
+        <ul>
+            <li>Team Lead</li>
+            <li>Front-end engineer</li>
+            <li>React Specialist</li>
+        </ul>
+    </div>
+        <img alt="banner" src="/banner.svg" class="bgSvg">
+        <img src="/valentyna-antoniuk.png" alt="Valentyna Antoniuk" class="valentyna" />
+    </div>
+</section>
+<div class="content-container">
+    <div class="about">
+        I love JS, creating useful products, and finding interesting solutions. <br />
+        I know how to improve code quality and achieve the project's business goals. I have been working with startups for more than <b>6 years</b>. <br />
+        I have <b>4+ years</b> of experience managing a development team and have successfully improved processes and documentation. <br />
+    </div>
+</div>
 
-<section>Banner</section>
+<style>
+    section {
+        background: #b6ffcc;
+        padding: 250px 0 280px;
+        position: relative;
+        overflow: hidden;
+    }
+    .content {
+        position: relative;
+        z-index: 3;
+    }
+    .bgSvg {
+        position: absolute;
+        width: 50%;
+        right: -5%;
+        top: 0;
+        z-index: 0;
+    }
+    .valentyna {
+        position: absolute;
+        width: 30%;
+        right: 10%;
+        top: 20%;
+    }
+    h1 {
+        font-size: 100px;
+    }
+    ul {
+        font-size: 40px;
+    }
+    .about {
+        font-size: 25px;
+        line-height: 35px;
+        padding: 40px 0 70px;
+        position: relative;
+    }
+    .about::before {
+        content: '❝';
+        display: block;
+        position: absolute;
+        font-size: 60px;
+        left: -60px;
+        top: 50px;
+        color: #56b172;
+    }
+</style>
