@@ -5,27 +5,37 @@ const uaCode = "\u{1F1FA}\u{1F1E6}";
 const currentYear = new Date().getFullYear();
 ---
 
-<div>
-  <p>
-    Made with {heartCode}
-    <a
-      href="https://helpukraine.center/"
-      target="_blank"
-      title="Check if you can help">in Ukraine</a
-    >
-    <span>{uaCode}</span>
-  </p>
+<div class="copyright">
+  <div class="content-container">
+    <p>
+      Made with {heartCode}
+      <a
+        href="https://helpukraine.center/"
+        target="_blank"
+        title="Check if you can help">in Ukraine</a
+      >
+      <span>{uaCode}</span>
+    </p>
 
-  <p>&#169; {currentYear} Valentyna Antoniuk | All Rights Reserved</p>
+    <p>&#169; {currentYear} Valentyna Antoniuk | All Rights Reserved</p>
+  </div>
 </div>
 
 <style lang="scss">
-  div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 8px;
-    padding-bottom: 8px;
+  .copyright {
+    padding: 20px 0;
+    background: #ffe6eb;
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &:hover {
+      span {
+        opacity: 1;
+        right: -30px;
+      }
+    }
   }
   a {
     cursor: help;
@@ -43,10 +53,6 @@ const currentYear = new Date().getFullYear();
       transform: translateY(-50%);
     }
     &:hover {
-      span {
-        opacity: 1;
-        right: -30px;
-      }
     }
   }
 </style>

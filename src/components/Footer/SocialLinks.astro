@@ -7,17 +7,20 @@ const socialLinks = [
   {
     color: "#aa381e",
     Icon: EnvelopeIcon,
+    tooltip: "Email",
     url: "mailto:antoniuk.valentyna@gmail.com",
   },
   {
     color: "#0077B5",
     Icon: LinkedinIcon,
     topMargin: "-4px",
+    tooltip: "Linkedin",
     url: "https://www.linkedin.com/in/antoniukvalentyna/",
   },
   {
     color: "#000",
     Icon: GithubIcon,
+    tooltip: "GitHub",
     url: "https://github.com/valentyna-antoniuk",
   },
 ];
@@ -26,7 +29,7 @@ const socialLinks = [
 <ul>
   {
     socialLinks.map((link) => (
-      <li style={`--color: ${link.color};`}>
+      <li style={`--color: ${link.color};`} title={link.tooltip}>
         <a
           target="_blank"
           rel="nofollow noopener noreferrer external"
