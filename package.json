@@ -17,9 +17,15 @@
     "pre-commit": "npx prettier . --write"
   },
   "dependencies": {
-    "astro": "5.4.2",
+    "@astrojs/mdx": "4.2.1",
+    "@astrojs/react": "4.2.1",
+    "@types/react": "19.0.12",
+    "@types/react-dom": "19.0.4",
+    "astro": "5.5.3",
     "install": "0.13.0",
     "npm": "11.2.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "sass": "1.85.1"
   },
   "devDependencies": {

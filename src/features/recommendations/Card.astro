@@ -1,80 +1,80 @@
 ---
 type Props = {
-    review: {
-        name: string,
-        date: string,
-        position: string,
-        recommendations: string,
-        image: string,
-    }
+  review: {
+    name: string;
+    date: string;
+    position: string;
+    recommendations: string;
+    image: string;
+  };
 };
 
 const { review } = Astro.props;
 ---
 
 <div class="review-card">
-    <div class="review-header">
-        <img src={review.image} alt={review.name} class="review-image" />
-        <div class="review-info">
-            <h3 class="review-name">{review.name}</h3>
-            <p class="review-position">{review.position}</p>
-            <p class="review-date">{review.date}</p>
-        </div>
+  <div class="review-header">
+    <img src={review.image} alt={review.name} class="review-image" />
+    <div class="review-info">
+      <h3 class="review-name">{review.name}</h3>
+      <p class="review-position">{review.position}</p>
+      <p class="review-date">{review.date}</p>
     </div>
-    <p class="review-text">"{review.recommendations}"</p>
+  </div>
+  <p class="review-text">"{review.recommendations}"</p>
 </div>
 
 <style>
-    .review-card {
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        max-width: 50%;
-        border-left: 5px solid #b6e1ff;
-    }
+  .review-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 50%;
+    border-left: 5px solid #b6e1ff;
+  }
 
-    .review-header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-    }
+  .review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
 
-    .review-image {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-right: 15px;
-        border: 3px solid  #b6e1ff;
-    }
+  .review-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 3px solid #b6e1ff;
+  }
 
-    .review-info {
-        flex-grow: 1;
-    }
+  .review-info {
+    flex-grow: 1;
+  }
 
-    .review-name {
-        font-size: 1.2rem;
-        font-weight: bold;
-        margin: 0;
-    }
+  .review-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+  }
 
-    .review-position {
-        font-size: 0.9rem;
-        color: #666;
-        margin: 2px 0;
-    }
+  .review-position {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 2px 0;
+  }
 
-    .review-date {
-        font-size: 0.8rem;
-        color: #888;
-    }
+  .review-date {
+    font-size: 0.8rem;
+    color: #888;
+  }
 
-    .review-text {
-        font-size: 1rem;
-        line-height: 1.5;
-        color: #333;
-        margin-top: 10px;
-        white-space: pre-line;
-    }
+  .review-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+    margin-top: 10px;
+    white-space: pre-line;
+  }
 </style>
