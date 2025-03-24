@@ -40,12 +40,21 @@ import ReactContactForm from "./ReactContactForm";
     padding: 60px 0 90px;
     max-width: 80%;
     margin: 0 auto;
+    @media (max-width: 1200px) {
+      display: block;
+    }
+      @media (max-width: 620px) {
+        max-width: 100%;
+      }
     > div {
       margin: 0 auto;
     }
   }
   .contact {
     padding: 41px 0;
+    @media (max-width: 1200px) {
+      text-align: center;
+    }
   }
   p {
     font-size: 18px;
@@ -53,6 +62,10 @@ import ReactContactForm from "./ReactContactForm";
     padding-bottom: 15px;
     &:nth-child(3) {
       padding-bottom: 25px;
+    }
+    @media (max-width: 620px) {
+      font-size: 16px;
+      line-height: 19px;
     }
   }
 </style>

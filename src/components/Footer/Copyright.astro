@@ -29,6 +29,11 @@ const currentYear = new Date().getFullYear();
       display: flex;
       align-items: center;
       justify-content: space-between;
+      @media (max-width: 620px) {
+        display: block;
+        font-size: 12px;
+        line-height: 20px;
+      }
     }
     &:hover {
       span {
@@ -51,8 +56,6 @@ const currentYear = new Date().getFullYear();
       margin-left: 10px;
       top: 50%;
       transform: translateY(-50%);
-    }
-    &:hover {
     }
   }
 </style>

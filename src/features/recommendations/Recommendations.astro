@@ -24,6 +24,9 @@ import data from "./data.json";
     display: flex;
     justify-content: space-evenly;
     gap: 16px;
+    @media (max-width: 1200px) {
+      display: block;
+    }
   }
   .wave-pattern {
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0 10 Q 25 0, 50 10 T 100 10 V20 H0 Z" fill="%23ffb6c1"/></svg>')

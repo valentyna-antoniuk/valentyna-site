@@ -14,66 +14,107 @@
     </div>
     <img alt="banner" src="/banner.svg" class="bgSvg" />
     <img
-      src="/valentyna-antoniuk.png"
+      src="/valentyna-antoniuk-min.png"
       alt="Valentyna Antoniuk"
       class="valentyna"
     />
   </div>
 </section>
 <div class="content-container">
-  <div class="about">
-    I love JS, creating useful products, and finding interesting solutions. <br
-    />
-    I know how to improve code quality and achieve the project's business goals.
-    I have been working with startups for more than <b>6 years</b>. <br />
-    I have <b>4+ years</b> of experience managing a development team and have successfully
-    improved processes and documentation. <br />
-  </div>
+  <ul class="about">
+    <li>I love JS, creating useful products, and finding interesting solutions. </li>
+    <li>I know how to improve code quality and achieve the project's business goals. I have been working with startups for more than <b>6 years</b>. </li>
+    <li>I have <b>4+ years</b> of experience managing a development team and have successfully
+    improved processes and documentation. </li>
+  </ul>
 </div>
 
 <style>
   section {
     background: #b6ffcc;
-    padding: 250px 0 280px;
+    //padding: 20vh 0 25vh;
     position: relative;
     overflow: hidden;
+    height: max(60vh, 500px);
+    @media (max-width: 900px) {
+      height: max(30vh, 350px);
+    }
   }
   .content {
-    position: relative;
+    position: absolute;
     z-index: 3;
+    top: 35%;
+    @media (max-width: 600px) {
+      bottom: 0;
+      top: inherit;
+    }
+    @media (max-width: 400px) {
+      > * {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+    }
   }
   .bgSvg {
     position: absolute;
-    width: 50%;
-    right: -5%;
+    width: max(30vh, 40%);
+    right: -5vw;
     top: 0;
     z-index: 0;
   }
   .valentyna {
     position: absolute;
-    width: 30%;
-    right: 10%;
-    top: 20%;
+    height: max(60vh, 400px);
+    max-height: 90%;
+    right: 15%;
+    bottom: 0;
+    @media (max-width: 900px) {
+      height: inherit;
+      max-height: inherit;
+      width: max(30vw, 200px);
+      right: 0;
+    }
   }
   h1 {
-    font-size: 70px;
+    font-size: min(4vw, 70px);
+    @media (max-width: 900px) {
+      font-size: 40px;
+    }
   }
   ul {
-    font-size: 40px;
+    font-size: min(2.2vw, 40px);
+    @media (max-width: 900px) {
+      font-size: 30px;
+    }
   }
   .about {
     font-size: 25px;
     line-height: 35px;
     padding: 40px 0 70px;
     position: relative;
+
+    &::before {
+      content: "❝";
+      display: block;
+      position: absolute;
+      font-size: 60px;
+      left: -60px;
+      top: 50px;
+      color: #56b172;
+      @media (max-width: 1200px) {
+        font-size: 400px;
+        opacity: 0.1;
+        top: 150px;
+      }
+    }
+    @media (max-width: 1200px) {
+      li {
+        margin-bottom: 10px;
+      }
+    }
+    @media (max-width: 620px) {
+      font-size: 18px;
+      line-height: 24px;
+    }
   }
-  .about::before {
-    content: "❝";
-    display: block;
-    position: absolute;
-    font-size: 60px;
-    left: -60px;
-    top: 50px;
-    color: #56b172;
-  }
+
 </style>

@@ -6,7 +6,7 @@ import Readme from "./README.mdx";
 <section>
   <div class="content-container">
     <h2>Skills & Technologies</h2>
-    <div style="display: flex; justify-content: center; align-items: center;">
+    <div class="wrapper">
       <div class="skills">
         <Readme />
       </div>
@@ -44,6 +44,14 @@ import Readme from "./README.mdx";
     position: relative;
     background: radial-gradient(#b6e1ff 5%, transparent 10%) 0 0 / 30px 30px;
   }
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 1200px) {
+      display: block;
+    }
+  }
   .skills {
     gap: 16px;
     flex: 2;
@@ -62,5 +70,9 @@ import Readme from "./README.mdx";
     display: flex;
     flex-direction: column;
     gap: 20px;
+    @media (max-width: 1200px) {
+      max-width: 500px;
+      margin-top: 45px;
+    }
   }
 </style>
