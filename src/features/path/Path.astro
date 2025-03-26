@@ -7,14 +7,16 @@ import { careerJourney } from "./steps";
   <h2 style="text-align: center">Overview of Career Journey</h2>
   <ul>
     <li class="start">it all began from ...</li>
-    {careerJourney.map(({ text, emoji }, index) => (
+    {
+      careerJourney.map(({ text, emoji }, index) => (
         <li class="step">
-          <div class="space"></div>
+          <div class="space" />
           <span class="icon">{emoji}</span>
-          <span class="text" set:html={text}></span>
+          <span class="text" set:html={text} />
         </li>
-    ))}
-    <li class="start">to be continued ... </li>
+      ))
+    }
+    <li class="start">to be continued ...</li>
   </ul>
 
   <div class="wave-pattern bottom"></div>
@@ -29,7 +31,7 @@ import { careerJourney } from "./steps";
 
   .wave-pattern {
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0 10 Q 25 0, 50 10 T 100 10 V20 H0 Z" fill="%23b6e1ff"/></svg>')
-    repeat-x;
+      repeat-x;
     background-size: 100px auto;
     height: 20px;
     &.bottom {
