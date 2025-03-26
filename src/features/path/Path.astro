@@ -6,7 +6,15 @@ import { careerJourney } from "./steps";
 <section>
   <h2 style="text-align: center">Overview of Career Journey</h2>
   <ul>
-    {careerJourney.map((str) => <li>{str}</li>)}
+    <li class="start">it all began from ...</li>
+    {careerJourney.map(({ text, emoji }, index) => (
+        <li class="step">
+          <div class="space"></div>
+          <span class="icon">{emoji}</span>
+          <span class="text" set:html={text}></span>
+        </li>
+    ))}
+    <li class="start">to be continued ... </li>
   </ul>
 
   <div class="wave-pattern bottom"></div>
@@ -21,7 +29,7 @@ import { careerJourney } from "./steps";
 
   .wave-pattern {
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0 10 Q 25 0, 50 10 T 100 10 V20 H0 Z" fill="%23b6e1ff"/></svg>')
-      repeat-x;
+    repeat-x;
     background-size: 100px auto;
     height: 20px;
     &.bottom {
@@ -35,53 +43,121 @@ import { careerJourney } from "./steps";
   ul {
     display: flex;
     overflow: auto;
-    padding: 0 0 20px;
-    li {
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      padding: 20px;
+    padding: 40px;
+    height: 400px;
+    .step {
+      position: relative;
+      padding: 20px 0;
       width: 100%;
       min-width: 300px;
-      flex-basis: 400px;
-      border-left: 5px solid #7eb3ff;
-      background: #fff;
-      border-radius: 15px;
-      margin: 0 25px;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
-      text-align: center;
+      align-items: center;
       font-size: 20px;
+      &:before,
+      &:after {
+        width: calc(50% - 40px);
+        height: 2px;
+        background: #c8a962;
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        position: absolute;
+        z-index: 0;
+      }
+      &:before {
+        left: calc(50% + 40px);
+      }
+      &:after {
+        right: calc(50% + 40px);
+      }
+      &:nth-child(even) {
+        .text {
+          order: 1;
+        }
+        .icon {
+          order: 2;
+          &:after {
+          }
+        }
+        .space {
+          order: 3;
+        }
+      }
+      &:nth-child(odd) {
+        .icon {
+          &:after {
+            transform: rotate(180deg);
+            top: initial;
+            bottom: -15px;
+          }
+        }
+      }
+    }
+    .icon {
+      display: block;
+      width: 80px;
+      height: 80px;
+      min-height: 80px;
+      line-height: 80px;
+      border-radius: 50%;
+      text-align: center;
+      border: 2px solid #7eb3ff;
+      background: #fff;
+      font-size: 40px;
+      margin: 20px 0;
+      box-shadow: 0 4px 10px rgba(126, 179, 255, 0.7);
       position: relative;
       &:after {
         content: "";
         display: inline-block;
         width: 0;
         height: 0;
-        border-left: 8px solid #c8a962;
-        border-top: 8px solid transparent;
-        border-bottom: 8px solid transparent;
+        border-bottom: 10px solid #c8a962;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: none;
         vertical-align: middle;
-        right: -40px;
         position: absolute;
-      }
-      &:before {
-        width: 20px;
-        height: 2px;
-        background: #c8a962;
-        content: "";
-        display: inline-block;
-        vertical-align: middle;
-        right: -35px;
-        position: absolute;
-      }
-      &:last-child {
-        &:after,
-        &:before {
-          display: none;
-        }
+        left: 29px;
+        top: -15px;
       }
     }
+    .text {
+      min-width: 240px;
+      width: 120%;
+      text-align: center;
+      min-height: calc((100% - 80px) / 2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      padding: 12px 18px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 500;
+      transition: all 0.3s;
+      border: 2px dashed #7eb3ff;
+    }
   }
-  .step {
+  .space {
+    min-height: calc((100% - 80px) / 2);
+    flex-grow: 1;
+  }
+  .start {
+    min-width: fit-content;
+    height: 40px;
+    border-radius: 20px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #ffc542;
+    margin: auto;
+    font-size: 18px;
   }
 </style>
