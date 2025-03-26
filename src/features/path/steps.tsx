@@ -1,33 +1,33 @@
 export const careerJourney = [
   {
-    text: "<span>Passion for computers and participation in School Olympiads</span>",
+    text: "<span>Passion for computers and participation in school Olympiads</span>",
     emoji: "🏫",
   },
   {
-    text: "<span>Enrolled in <b>Computer Engineering Faculty</b></span>",
+    text: "<span>Enrolled in the <b>Faculty of Computer Engineering</b></span>",
     emoji: "👩‍🎓",
   },
-  { text: "<span><b>Bachelor's Degree</b> with Honors</span>", emoji: "🎓" },
-  { text: "<span><b>Master's Degree</b> with Honors</span>", emoji: "🎓" },
-  { text: "Realized my passion for Web Development", emoji: "💡" },
+  { text: "<span><b>Bachelor’s Degree</b> with honors</span>", emoji: "🎓" },
+  { text: "<span><b>Master’s Degree</b> with honors</span>", emoji: "🎓" },
+  { text: "<span>Realized my passion for Web Development</span>", emoji: "💡" },
   {
-    text: "First projects and internships, gaining hands-on experience in coding",
+    text: "<span>First projects and internships, gaining hands-on coding experience</span>",
     emoji: "👩‍💻",
   },
   {
-    text: "<span><b>Front-End Development</b>: years of experience focusing on markup, layout, and user interfaces</span>",
+    text: "<span><b>Front-end Development</b>: years of experience focusing on markup, layout, and user interfaces</span>",
     emoji: "🖥️",
   },
   {
-    text: "Learning JavaScript, React, and modern development tools, building a solid technical foundation",
+    text: "<span>Learning JavaScript, React, and modern development tools while building a solid technical foundation</span>",
     emoji: "👩‍🏫️",
   },
   {
-    text: "<span><b>React</b>: Over the years, developed multiple products, focusing on performance and scalability</span>",
+    text: "<span><b>React Development</b>: over the years, I have built multiple products, focusing on performance and scalability</span>",
     emoji: "⚡",
   },
   {
-    text: "<span><b>Front-End Team Lead</b>: managing projects and driving technical decisions</span>",
+    text: "<span><b>Front-end Team Lead</b>: managing projects and making key technical decisions</span>",
     emoji: "🚀",
   },
   {
