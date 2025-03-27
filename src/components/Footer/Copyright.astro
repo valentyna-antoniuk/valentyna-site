@@ -33,6 +33,11 @@ const currentYear = new Date().getFullYear();
         display: block;
         font-size: 12px;
         line-height: 20px;
+        &:hover {
+          span {
+            right: initial;
+          }
+        }
       }
     }
     &:hover {
@@ -56,6 +61,12 @@ const currentYear = new Date().getFullYear();
       margin-left: 10px;
       top: 50%;
       transform: translateY(-50%);
+      @media (max-width: 620px) {
+        position: relative;
+        opacity: 1;
+        font-size: inherit;
+        margin-left: 5px;
+      }
     }
   }
 </style>

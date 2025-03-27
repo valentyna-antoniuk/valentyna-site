@@ -8,12 +8,12 @@ export const careerJourney = [
     emoji: "👩‍🎓",
   },
   { text: "<span><b>Bachelor’s Degree</b> with honors</span>", emoji: "🎓" },
-  { text: "<span><b>Master’s Degree</b> with honors</span>", emoji: "🎓" },
   { text: "<span>Realized my passion for Web Development</span>", emoji: "💡" },
   {
     text: "<span>First projects and internships, gaining hands-on coding experience</span>",
     emoji: "👩‍💻",
   },
+  { text: "<span><b>Master’s Degree</b> with honors</span>", emoji: "🎓" },
   {
     text: "<span><b>Front-end Development</b>: years of experience focusing on markup, layout, and user interfaces</span>",
     emoji: "🖥️",
@@ -24,7 +24,7 @@ export const careerJourney = [
   },
   {
     text: "<span><b>React Development</b>: over the years, I have built multiple products, focusing on performance and scalability</span>",
-    emoji: "⚡",
+    emoji: "⚛️",
   },
   {
     text: "<span><b>Front-end Team Lead</b>: managing projects and making key technical decisions</span>",

@@ -6,11 +6,11 @@
   <div class="content-container">
     <div class="content">
       <h1>Valentyna Antoniuk</h1>
-      <ul>
-        <li>Team Lead</li>
-        <li>Front-end engineer</li>
-        <li>React Specialist</li>
-      </ul>
+      <div>
+        <h3>Team Lead</h3>
+        <h3>Front-end engineer</h3>
+        <h3>React Specialist</h3>
+      </div>
     </div>
     <img alt="banner" src="/banner.svg" class="bgSvg" />
     <img
@@ -39,26 +39,19 @@
 <style>
   section {
     background: #b6ffcc;
-    //padding: 20vh 0 25vh;
     position: relative;
     overflow: hidden;
     height: max(60vh, 500px);
     @media (max-width: 900px) {
-      height: max(30vh, 350px);
+      height: max(35vh, 400px);
     }
   }
   .content {
     position: absolute;
     z-index: 3;
     top: 35%;
-    @media (max-width: 600px) {
-      bottom: 0;
-      top: inherit;
-    }
-    @media (max-width: 400px) {
-      > * {
-        background-color: rgba(255, 255, 255, 0.5);
-      }
+    @media (max-width: 700px) {
+      top: 30px;
     }
   }
   .bgSvg {
@@ -67,6 +60,16 @@
     right: -5vw;
     top: 0;
     z-index: 0;
+    @media (max-width: 900px) {
+      top: inherit;
+      bottom: -20%;
+      width: max(40vh, 50%);
+    }
+    @media (max-width: 400px) {
+      width: 100%;
+      top: inherit;
+      bottom: -20%;
+    }
   }
   .valentyna {
     position: absolute;
@@ -77,8 +80,11 @@
     @media (max-width: 900px) {
       height: inherit;
       max-height: inherit;
-      width: max(30vw, 200px);
+      width: max(30vw, 250px);
       right: 0;
+    }
+    @media (max-width: 430px) {
+      width: 200px;
     }
   }
   h1 {
@@ -86,11 +92,17 @@
     @media (max-width: 900px) {
       font-size: 40px;
     }
+    @media (max-width: 600px) {
+      font-size: 35px;
+    }
   }
-  ul {
+  h3 {
     font-size: min(2.2vw, 40px);
     @media (max-width: 900px) {
       font-size: 30px;
+    }
+    @media (max-width: 400px) {
+      font-size: 25px;
     }
   }
   .about {
