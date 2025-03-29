@@ -1,10 +1,13 @@
 ---
-import HorizontalPath from "./HorizontalPath";
+import { HorizontalPath } from "./HorizontalPath";
 ---
 
 <div class="wave-pattern"></div>
 <section>
-  <h2 style="text-align: center">Overview of Career Journey</h2>
+  <h2 style="text-align: center">
+    <span>Overview of Career Journey</span>
+    <span class="helper"> SCROLL TO SEE >> </span>
+  </h2>
   <HorizontalPath client:load />
   <div class="wave-pattern bottom"></div>
 </section>
@@ -28,5 +31,23 @@ import HorizontalPath from "./HorizontalPath";
       bottom: -20px;
       width: 100%;
     }
+  }
+  h2 {
+    span:first-child {
+      position: relative;
+      right: 0;
+      &::after {
+        content: "*";
+        color: darkred;
+        position: absolute;
+        top: -5px;
+        right: -35px;
+      }
+    }
+  }
+  .helper {
+    color: darkred;
+    font-size: 20px;
+    display: block;
   }
 </style>
