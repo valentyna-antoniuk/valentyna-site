@@ -14,7 +14,12 @@ const { review } = Astro.props;
 
 <div class="review-card">
   <div class="review-header">
-    <img src={review.image} alt={review.name} class="review-image" loading="lazy" />
+    <img
+      src={review.image}
+      alt={review.name}
+      class="review-image"
+      loading="lazy"
+    />
     <div class="review-info">
       <h3 class="review-name">{review.name}</h3>
       <p class="review-position">{review.position}</p>

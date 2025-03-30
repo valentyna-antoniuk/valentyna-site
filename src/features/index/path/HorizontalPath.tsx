@@ -94,9 +94,7 @@ export const HorizontalPath = () => {
             />
           </motion.li>
         ))}
-        <motion.li className={styles.start}>
-          to be continued ...
-        </motion.li>
+        <motion.li className={styles.start}>to be continued ...</motion.li>
       </motion.ul>
     </div>
   );
