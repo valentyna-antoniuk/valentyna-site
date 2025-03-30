@@ -1,15 +1,17 @@
 ---
 import CommonLayout from "../layouts/CommonLayout.astro";
 
-import Banner from "../features/banner/Banner.astro";
-import Path from "../features/path/Path.astro";
-import Recommendations from "../features/recommendations/Recommendations.astro";
-import Skills from "../features/skills/Skills.astro";
+import Banner from "../features/index/banner/Banner.astro";
+import Path from "../features/index/path/Path.astro";
+import Recommendations from "../features/index/recommendations/Recommendations.astro";
+import Skills from "../features/index/skills/Skills.astro";
+import Certificates from "../features/index/certificates/Certificates.astro";
 ---
 
 <CommonLayout>
   <Banner />
   <Path />
   <Skills />
+  <Certificates />
   <Recommendations />
 </CommonLayout>

@@ -2,7 +2,7 @@
 
 ## 🚀 Goal
 
-This project serves as a personal portfolio and a showcase of my skills as a Front-End Developer. It is designed to demonstrate my proficiency in modern web technologies, best practices, and my approach to building scalable and user-friendly applications.
+This project serves as a personal portfolio and a showcase of my skills as a Front-End Developer. It is designed to demonstrate proficiency in modern web technologies, best practices, and approach to building scalable and user-friendly applications.
 
 ## 🧞 Commands
 

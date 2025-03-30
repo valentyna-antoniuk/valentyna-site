@@ -3,7 +3,6 @@ form {
   margin-left: 10%;
   margin-top: 15px;
 }
-
 input,
 textarea {
   width: 100%;
@@ -16,30 +15,25 @@ textarea {
   transition: all 0.3s ease-in-out;
   outline: none;
 }
-
 input:focus,
 textarea:focus {
   border-color: #ff758c;
   background: #fff;
   box-shadow: 0 0 8px rgba(255, 117, 140, 0.4);
 }
-
 input:hover,
 textarea:hover {
   background: #fff5f7;
 }
-
 input::placeholder,
 textarea::placeholder {
   color: rgba(51, 51, 51, 0.5);
 }
-
 textarea {
   resize: vertical;
   min-height: 100px;
   margin-bottom: 14px;
 }
-
 label {
   display: block;
   font-size: 1rem;
@@ -48,7 +42,6 @@ label {
   margin: 10px 0 5px;
   transition: color 0.3s ease-in-out;
 }
-
 @media (max-width: 1200px) {
   form {
     margin-left: 0;

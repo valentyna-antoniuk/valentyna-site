@@ -1,6 +1,5 @@
 ---
 import Head from "../components/Head.astro";
-import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer/Footer.astro";
 
 type Props = {
@@ -13,16 +12,8 @@ const { isFooterAvailable = true } = Astro.props;
   <Head />
   <body>
     <main>
-      <!--<Navigation />-->
       <slot />
       {isFooterAvailable && <Footer />}
     </main>
   </body>
 </html>
-
-<style>
-  main {
-    //max-width: 1900px;
-    //margin: 0 auto;
-  }
-</style>

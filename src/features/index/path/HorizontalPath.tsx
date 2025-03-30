@@ -94,16 +94,7 @@ export const HorizontalPath = () => {
             />
           </motion.li>
         ))}
-        <motion.li
-          className={styles.start}
-          initial={{ opacity: 1, x: 200 }}
-          viewport={{ once: true, amount: 0.3 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{
-            duration: 0.4,
-            scale: { type: "inertia", visualDuration: 0.4, bounce: 0.5 },
-          }}
-        >
+        <motion.li className={styles.start}>
           to be continued ...
         </motion.li>
       </motion.ul>
