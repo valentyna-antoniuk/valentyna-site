@@ -7,7 +7,7 @@
     "email": "antoniuk.valentyna@gmail.com",
     "name": "Valentyna Antoniuk"
   },
-  "description": "A personal portfolio and CV showcasing my skills and experience as a Front-End Developer",
+  "description": "A personal portfolio and CV",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
