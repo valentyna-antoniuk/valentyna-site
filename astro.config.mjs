@@ -5,8 +5,11 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
+  base: "/",
   output: "server",
   adapter: netlify(),
-  svg: true,
+  experimental: {
+    svg: true
+  },
   integrations: [mdx(), react()],
 });
