@@ -11,25 +11,31 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
+    "preview": "netlify dev",
     "prepare": "husky",
     "pre-commit": "npx prettier . --write"
   },
   "dependencies": {
-    "@astrojs/mdx": "4.2.1",
-    "@astrojs/react": "4.2.1",
-    "@types/react": "19.0.12",
-    "@types/react-dom": "19.0.4",
-    "astro": "5.5.3",
-    "framer-motion": "12.6.2",
+    "@astrojs/markdown-remark": "6.3.1",
+    "@astrojs/mdx": "4.2.6",
+    "@astrojs/react": "4.2.7",
+    "@types/react": "19.1.5",
+    "@types/react-dom": "19.1.5",
+    "astro": "5.7.13",
+    "framer-motion": "12.12.1",
     "install": "0.13.0",
-    "npm": "11.2.0",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "sass": "1.85.1"
+    "marked": "15.0.12",
+    "npm": "11.4.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "rehype-sanitize": "6.0.0",
+    "rehype-stringify": "10.0.1",
+    "remark": "15.0.1",
+    "remark-rehype": "11.1.2",
+    "sass": "1.89.0"
   },
   "devDependencies": {
+    "@astrojs/netlify": "6.3.3",
     "husky": "9.1.7",
     "prettier": "3.5.3",
     "prettier-plugin-astro": "0.14.1"

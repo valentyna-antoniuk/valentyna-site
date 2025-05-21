@@ -1,14 +1,17 @@
 ---
 import Button from "../../../components/ReactButton/ReactButton";
-import Readme from "./README.mdx";
+import { fetchMd } from '../../../helpers';
+
+const readme = await fetchMd(
+  'https://raw.githubusercontent.com/valentyna-antoniuk/valentyna-antoniuk/refs/heads/main/README.md');
 ---
 
 <section>
   <div class="content-container">
-    <h2>Skills & Technologies</h2>
     <div class="wrapper">
       <div class="skills">
-        <Readme />
+        <pre>{Astro.props.readme}</pre>
+        <Fragment set:html={readme} />
       </div>
       <div class="more-skills">
         Need expertise in a specific technology?

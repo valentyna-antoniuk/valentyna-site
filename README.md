@@ -1,6 +1,6 @@
 # Personal Website of Valentyna Antoniuk
 
-## 🚀 Goal
+## Description
 The goal of this project is to build a minimal personal CV website to present basic information and work experience.  
 An additional goal is to explore and better understand how Astro works by using it in a real-world project.
 
