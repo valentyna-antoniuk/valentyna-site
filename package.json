@@ -10,7 +10,7 @@
   "description": "A personal portfolio and CV",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && cp -r public .netlify/dist",
     "preview": "netlify dev",
     "prepare": "husky",
     "pre-commit": "npx prettier . --write"
