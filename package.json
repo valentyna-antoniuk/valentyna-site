@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build && cp -r public .netlify/dist",
-    "preview": "netlify dev",
+    "preview": "netlify dev --context production",
     "prepare": "husky",
     "pre-commit": "npx prettier . --write"
   },

@@ -8,8 +8,5 @@ export default defineConfig({
   base: "/",
   output: "server",
   adapter: netlify(),
-  experimental: {
-    svg: true
-  },
   integrations: [mdx(), react()],
 });
