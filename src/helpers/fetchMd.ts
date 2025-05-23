@@ -3,7 +3,10 @@ import rehype from "remark-rehype";
 import stringify from "rehype-stringify";
 import sanitize from "rehype-sanitize";
 
-export const fetchMd = async (url: string): Promise<string | undefined> => {
+export const fetchMd = async (
+  url: string,
+  heading?: string,
+): Promise<string | undefined> => {
   try {
     const response = await fetch(url);
     console.info(`Fetching: ${url}`);
@@ -11,7 +14,7 @@ export const fetchMd = async (url: string): Promise<string | undefined> => {
       throw new Error(`Failed to fetch README: ${response.statusText}`);
     const text = await response.text();
     console.info(`🟢 Successfully received: ${url}`);
-    return renderMarkdownSafe(extractMarkdownSection(text) ?? "");
+    return renderMarkdownSafe(extractMarkdownSection(text, heading) ?? "");
   } catch (error) {
     console.error("❌ Failed to fetch", url);
     console.error(error);
@@ -24,7 +27,7 @@ export const extractMarkdownSection = (
 ): string | null => {
   const regex = new RegExp(`## ${heading}\\s*([\\s\\S]*?)(?=^##\\s|\\Z)`, "m");
   const match = markdown.match(regex);
-  return match ? `## ${heading}\n${match[1].trim()}` : null;
+  return match ? match[1].trim() : null;
 };
 
 export const renderMarkdownSafe = async (markdown: string): Promise<string> => {

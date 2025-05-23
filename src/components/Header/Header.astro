@@ -1,0 +1,136 @@
+---
+import SocialLinks from "../Footer/SocialLinks.astro";
+---
+
+<header>
+  <nav class="content-container">
+    <ul>
+      <li>
+        <a href="/">
+          <img
+            alt="Valentyna Antoniuk"
+            src="/logo.webp"
+            fetchpriority="high"
+            width="100"
+          />
+        </a>
+      </li>
+      <li>
+        <a href="/"> Home </a>
+      </li>
+      <li>
+        <a href="/pet-projects"> Pet Projects </a>
+      </li>
+    </ul>
+    <SocialLinks />
+  </nav>
+</header>
+
+<style lang="scss">
+  header {
+    background: #8ac8f3;
+    position: sticky;
+    top: 0;
+    color: white;
+    text-align: center;
+    z-index: 1000;
+    border-bottom: 1px dashed white;
+    box-shadow: 0 3px 6px rgba(255, 255, 255, 0.4);
+  }
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    font-size: 23px;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+      gap: 20px;
+      padding: 10px 0;
+      font-size: 18px;
+    }
+    @media (max-width: 375px) {
+      font-size: 15px;
+    }
+  }
+  h2 {
+    width: initial;
+    margin-bottom: 0;
+    white-space: nowrap;
+    @media (max-width: 750px) {
+      font-size: 24px;
+    }
+  }
+  a {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 4px 0;
+    transition: transform 0.3s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: repeating-linear-gradient(
+        90deg,
+        red,
+        orange 10%,
+        yellow 20%,
+        lime 30%,
+        cyan 40%,
+        blue 50%,
+        violet 60%,
+        red 70%
+      );
+      background-size: 200% auto;
+      animation: seamless-rainbow 3s linear infinite;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    &:hover {
+      transform: scale(1.03);
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  @keyframes seamless-rainbow {
+    0% {
+      background-position: 0% 0;
+    }
+    25% {
+      background-position: 100% 0;
+    }
+    75% {
+      background-position: 0% 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    letter-spacing: -1px;
+    font-weight: 500;
+    @media (max-width: 600px) {
+      gap: 15px;
+    }
+  }
+  li:first-child a::after {
+    display: none;
+  }
+</style>

@@ -1,0 +1,62 @@
+---
+import { fetchMd } from "../../helpers";
+import ProjectCard from './ProjectCard.astro';
+
+const projects = [
+  {
+    title: 'Personal Website',
+    name: 'valentyna-site'
+  },
+];
+
+const readmes = await Promise.all(
+  projects.map((project) =>
+    fetchMd(
+      `https://raw.githubusercontent.com/valentyna-antoniuk/${project.name}/refs/heads/main/README.md`,
+      "Description"
+    )
+  )
+);
+---
+
+<div class="wave-pattern"></div>
+<section>
+  <div class="content-container">
+    <h2 style="text-align: center">Pet Projects</h2>
+  </div>
+
+
+  <div class="content-container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px">
+  {
+    readmes.map((readme, index) => <ProjectCard title={projects[index].title} imgUrl={`https://raw.githubusercontent.com/valentyna-antoniuk/${projects[index].name}/refs/heads/main/petProjectPreview.webp`}>
+      <Fragment set:html={readme} />
+    </ProjectCard>)
+  }
+  </div>
+
+  <div class="wave-pattern bottom"></div>
+</section>
+
+<style lang="scss">
+  section {
+    background: #dcf5ff;
+    padding: 80px 0 120px;
+    position: relative;
+  }
+  h2 {
+    color: #433100;
+  }
+  .wave-pattern {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="20" viewBox="0 0 100 20"><path d="M0 10 Q 25 0, 50 10 T 100 10 V20 H0 Z" fill="%23dcf5ff"/></svg>');
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    height: 20px;
+    &.bottom {
+      background-size: 100px auto;
+      transform: scaleY(-1);
+      position: absolute;
+      bottom: -20px;
+      width: 100%;
+    }
+  }
+</style>

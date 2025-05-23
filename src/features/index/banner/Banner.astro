@@ -1,5 +1,6 @@
 ---
 import { backgroundImage } from "./helpers";
+import Quote from "../../../components/Quote.astro";
 ---
 
 <section>
@@ -29,21 +30,21 @@ import { backgroundImage } from "./helpers";
     />
   </div>
 </section>
-<div class="content-container">
-  <ul class="about">
-    <li>
-      I love JS, creating useful products, and finding interesting solutions.
-    </li>
-    <li>
-      I know how to improve code quality and achieve the project's business
-      goals. I have been working with startups for more than <b>6 years</b>.
-    </li>
-    <li>
-      I have <b>4+ years</b> of experience managing a development team and have successfully
-      improved processes and documentation.
-    </li>
-  </ul>
-</div>
+<Quote>
+  <li>
+    I love JS, creating useful products, and finding interesting solutions.
+  </li>
+  <li>
+    Earned a <b>Master’s degree in Computer Science</b> and have been building professional
+    experience in software development since <b>2016</b>.
+  </li>
+  <li>
+    Over the past <b>6+ years</b> I’ve been collaborating with startups, and for
+    more than <b>4 years</b>, I have managed development teams, successfully
+    enhancing processes and documentation I know how to improve code quality and
+    achieve the project's business goals.
+  </li>
+</Quote>
 
 <style>
   section {
@@ -111,36 +112,6 @@ import { backgroundImage } from "./helpers";
     }
     @media (max-width: 400px) {
       font-size: 25px;
-    }
-  }
-  .about {
-    font-size: 25px;
-    line-height: 35px;
-    padding: 40px 0 70px;
-    position: relative;
-
-    &::before {
-      content: "❝";
-      display: block;
-      position: absolute;
-      font-size: 60px;
-      left: -60px;
-      top: 50px;
-      color: #56b172;
-      @media (max-width: 1200px) {
-        font-size: 400px;
-        opacity: 0.1;
-        top: 150px;
-      }
-    }
-    @media (max-width: 1200px) {
-      li {
-        margin-bottom: 10px;
-      }
-    }
-    @media (max-width: 620px) {
-      font-size: 18px;
-      line-height: 24px;
     }
   }
 </style>
