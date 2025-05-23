@@ -6,6 +6,7 @@ type Props = {
 
 const { imgUrl, title } = Astro.props;
 ---
+
 <div class="blog-card alt">
   <div class="meta">
     <div class="photo" style={`background-image: url(${imgUrl})`}></div>
@@ -30,7 +31,7 @@ const { imgUrl, title } = Astro.props;
     display: flex;
     flex-direction: column;
     margin: 1rem auto 1.6%;
-    box-shadow: 0 3px 7px -1px rgba(#000, .1);
+    box-shadow: 0 3px 7px -1px rgba(#000, 0.1);
     background: $color_white;
     line-height: 1.4;
     font-family: sans-serif;
@@ -53,7 +54,7 @@ const { imgUrl, title } = Astro.props;
       left: 0;
       background-size: cover;
       background-position: top;
-      transition: transform .2s;
+      transition: transform 0.2s;
     }
 
     .description {

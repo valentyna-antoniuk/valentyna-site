@@ -1,11 +1,11 @@
 ---
 import { fetchMd } from "../../helpers";
-import ProjectCard from './ProjectCard.astro';
+import ProjectCard from "./ProjectCard.astro";
 
 const projects = [
   {
-    title: 'Personal Website',
-    name: 'valentyna-site'
+    title: "Personal Website",
+    name: "valentyna-site",
   },
 ];
 
@@ -13,9 +13,9 @@ const readmes = await Promise.all(
   projects.map((project) =>
     fetchMd(
       `https://raw.githubusercontent.com/valentyna-antoniuk/${project.name}/refs/heads/main/README.md`,
-      "Description"
-    )
-  )
+      "Description",
+    ),
+  ),
 );
 ---
 
@@ -25,13 +25,20 @@ const readmes = await Promise.all(
     <h2 style="text-align: center">Pet Projects</h2>
   </div>
 
-
-  <div class="content-container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px">
-  {
-    readmes.map((readme, index) => <ProjectCard title={projects[index].title} imgUrl={`https://raw.githubusercontent.com/valentyna-antoniuk/${projects[index].name}/refs/heads/main/petProjectPreview.webp`}>
-      <Fragment set:html={readme} />
-    </ProjectCard>)
-  }
+  <div
+    class="content-container"
+    style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px"
+  >
+    {
+      readmes.map((readme, index) => (
+        <ProjectCard
+          title={projects[index].title}
+          imgUrl={`https://raw.githubusercontent.com/valentyna-antoniuk/${projects[index].name}/refs/heads/main/petProjectPreview.webp`}
+        >
+          <Fragment set:html={readme} />
+        </ProjectCard>
+      ))
+    }
   </div>
 
   <div class="wave-pattern bottom"></div>
