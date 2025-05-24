@@ -1,5 +1,5 @@
 ---
-import { fetchMd } from "../../helpers";
+import { fetchMd, extractMarkdownSection } from "../../helpers";
 import ProjectCard from "./ProjectCard.astro";
 
 const projects = [
@@ -11,11 +11,11 @@ const projects = [
 
 const readmes = await Promise.all(
   projects.map((project) =>
-    fetchMd(
-      `https://raw.githubusercontent.com/valentyna-antoniuk/${project.name}/refs/heads/main/README.md`,
-      "Description",
-    ),
+    fetchMd(project.name),
   ),
+);
+const descriptions = readmes.map((readme) =>
+  extractMarkdownSection(readme || "", "Description"),
 );
 ---
 
@@ -30,12 +30,13 @@ const readmes = await Promise.all(
     style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px"
   >
     {
-      readmes.map((readme, index) => (
+      descriptions.map((description, index) => (
         <ProjectCard
+          name={projects[index].name}
           title={projects[index].title}
           imgUrl={`https://raw.githubusercontent.com/valentyna-antoniuk/${projects[index].name}/refs/heads/main/petProjectPreview.webp`}
         >
-          <Fragment set:html={readme} />
+          <Fragment set:html={description} />
         </ProjectCard>
       ))
     }

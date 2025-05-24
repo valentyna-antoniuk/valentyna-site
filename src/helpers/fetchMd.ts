@@ -3,18 +3,22 @@ import rehype from "remark-rehype";
 import stringify from "rehype-stringify";
 import sanitize from "rehype-sanitize";
 
-export const fetchMd = async (
-  url: string,
-  heading?: string,
-): Promise<string | undefined> => {
+export const fetchMd = async (name: string, fileName = 'README.md'): Promise<string | undefined> => {
+  const GITHUB_RAW_BASE = `https://raw.githubusercontent.com/valentyna-antoniuk/${name}/refs/heads/main/`;
+  const url = `${GITHUB_RAW_BASE}${fileName}`;
   try {
     const response = await fetch(url);
     console.info(`Fetching: ${url}`);
     if (!response.ok)
       throw new Error(`Failed to fetch README: ${response.statusText}`);
-    const text = await response.text();
+    let text = await response.text();
     console.info(`🟢 Successfully received: ${url}`);
-    return renderMarkdownSafe(extractMarkdownSection(text, heading) ?? "");
+
+    text = text.replace(/!\[([^\]]*)]\(\.?(?:\/)?public\/([^)\s]+)\)/g, (match, alt, path) => {
+      return `![${alt}](${GITHUB_RAW_BASE}public/${path})`;
+    });
+
+    return renderMarkdownSafe(text);
   } catch (error) {
     console.error("❌ Failed to fetch", url);
     console.error(error);

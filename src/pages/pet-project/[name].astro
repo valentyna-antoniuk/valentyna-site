@@ -1,0 +1,20 @@
+---
+import { marked } from 'marked';
+
+import Markdown from "../../components/Markdown.astro";
+import CommonLayout from "../../layouts/CommonLayout.astro";
+import { fetchMd, extractMarkdownSection } from "../../helpers";
+
+
+const { name } = Astro.params;
+
+const readme = await fetchMd(name || '');
+---
+
+<CommonLayout>
+  <div class="content-container">
+    <Markdown>
+      <Fragment set:html={marked(readme || '')} />
+    </Markdown>
+  </div>
+</CommonLayout>

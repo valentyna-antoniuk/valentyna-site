@@ -1,10 +1,11 @@
 ---
 type Props = {
+  name: string;
   title: string;
   imgUrl: string;
 };
 
-const { imgUrl, title } = Astro.props;
+const { imgUrl, title, name } = Astro.props;
 ---
 
 <div class="blog-card alt">
@@ -15,7 +16,9 @@ const { imgUrl, title } = Astro.props;
     <h1>{title}</h1>
     <p><slot /></p>
     <p class="read-more">
-      <button class="card-button">Read More</button>
+      <a href={`/pet-project/${name}`}>
+        <button class="card-button">Read More</button>
+      </a>
     </p>
   </div>
 </div>

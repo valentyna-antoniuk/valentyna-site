@@ -21,15 +21,16 @@ This project was built with a focus on rapid development and minimal dependencie
 - **Automated Deployment**: On push into the main branch;
 
 ## 🎨 UI / UX
+### Desktop
+![plot](/public/readme/mock-desktop.webp)
 
-|                  Desktop                  |                  Mobile                  |
-|:-----------------------------------------:|:----------------------------------------:|
-| ![plot](/public/readme/mock-desktop.webp) | ![plot](/public/readme/mock-mobile.webp) |
-
+### Mobile
+![plot](/public/readme/mock-mobile.webp)
 
 ## 💡 Project Reflection
+
 Astro proved to be an excellent choice for a simple personal website project.
-Its intuitive syntax, React island support, and effortless SSR setup made it easy to build and maintain. 
+Its intuitive syntax, React island support, and effortless SSR setup made it easy to build and maintain.
 Netlify's built-in Astro support further simplified the deployment process—automated builds and releases triggered by pushes to `main` have been invaluable for streamlining development.
 
 ## 📅 Plans for improvements
