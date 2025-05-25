@@ -37,7 +37,7 @@ export const extractMarkdownSection = (
 ): string => {
   const regex = new RegExp(`## ${heading}\\s*([\\s\\S]*?)(?=^##\\s|\\Z)`, "m");
   const match = markdown.match(regex);
-  return match ? match[1].trim() : '';
+  return match ? match[1].trim() : "";
 };
 
 export const renderMarkdownSafe = async (markdown: string): Promise<string> => {
