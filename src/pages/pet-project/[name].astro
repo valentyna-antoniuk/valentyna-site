@@ -1,20 +1,29 @@
 ---
-import { marked } from 'marked';
+import { marked } from "marked";
 
 import Markdown from "../../components/Markdown.astro";
 import CommonLayout from "../../layouts/CommonLayout.astro";
 import { fetchMd, extractMarkdownSection } from "../../helpers";
 
-
 const { name } = Astro.params;
 
-const readme = await fetchMd(name || '');
+const readme = await fetchMd(name || "");
 ---
 
 <CommonLayout>
+  <div style="position:relative;">
+
   <div class="content-container">
     <Markdown>
-      <Fragment set:html={marked(readme || '')} />
+      <Fragment set:html={marked(readme || "")} />
     </Markdown>
   </div>
+  <div class="wave-pattern bottom"></div>
+  </div>
 </CommonLayout>
+
+<style>
+.wave-pattern {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="20" viewBox="0 0 100 20"><path d="M0 10 Q 25 0, 50 10 T 100 10 V20 H0 Z" fill="%23fff"/><path d="M0 10 Q 25 0, 50 10 T 100 10" fill="none" stroke="lightpink" stroke-width="1"/></svg>');
+}
+</style>

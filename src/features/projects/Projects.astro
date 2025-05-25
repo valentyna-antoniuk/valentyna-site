@@ -1,5 +1,5 @@
 ---
-import { fetchMd, extractMarkdownSection } from "../../helpers";
+import { fetchMd, extractMarkdownSection, renderMarkdownSafe } from "../../helpers";
 import ProjectCard from "./ProjectCard.astro";
 
 const projects = [
@@ -10,12 +10,10 @@ const projects = [
 ];
 
 const readmes = await Promise.all(
-  projects.map((project) =>
-    fetchMd(project.name),
-  ),
+  projects.map((project) => fetchMd(project.name)),
 );
 const descriptions = readmes.map((readme) =>
-  extractMarkdownSection(readme || "", "Description"),
+  renderMarkdownSafe(extractMarkdownSection(readme || "", "Description")),
 );
 ---
 
@@ -47,7 +45,7 @@ const descriptions = readmes.map((readme) =>
 
 <style lang="scss">
   section {
-    background: #dcf5ff;
+    background: linear-gradient(to bottom, #dcf5ff, white);
     padding: 80px 0 120px;
     position: relative;
   }
@@ -56,15 +54,9 @@ const descriptions = readmes.map((readme) =>
   }
   .wave-pattern {
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="20" viewBox="0 0 100 20"><path d="M0 10 Q 25 0, 50 10 T 100 10 V20 H0 Z" fill="%23dcf5ff"/></svg>');
-    background-repeat: repeat-x;
-    background-size: auto 100%;
-    height: 20px;
     &.bottom {
-      background-size: 100px auto;
-      transform: scaleY(-1);
-      position: absolute;
-      bottom: -20px;
-      width: 100%;
+
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="20" viewBox="0 0 100 20"><path d="M0 10 Q 25 0, 50 10 T 100 10 V20 H0 Z" fill="%23fff"/><path d="M0 10 Q 25 0, 50 10 T 100 10" fill="none" stroke="lightpink" stroke-width="1"/></svg>');
     }
   }
 </style>

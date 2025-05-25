@@ -3,7 +3,10 @@ import rehype from "remark-rehype";
 import stringify from "rehype-stringify";
 import sanitize from "rehype-sanitize";
 
-export const fetchMd = async (name: string, fileName = 'README.md'): Promise<string | undefined> => {
+export const fetchMd = async (
+  name: string,
+  fileName = "README.md",
+): Promise<string | undefined> => {
   const GITHUB_RAW_BASE = `https://raw.githubusercontent.com/valentyna-antoniuk/${name}/refs/heads/main/`;
   const url = `${GITHUB_RAW_BASE}${fileName}`;
   try {
@@ -14,11 +17,14 @@ export const fetchMd = async (name: string, fileName = 'README.md'): Promise<str
     let text = await response.text();
     console.info(`🟢 Successfully received: ${url}`);
 
-    text = text.replace(/!\[([^\]]*)]\(\.?(?:\/)?public\/([^)\s]+)\)/g, (match, alt, path) => {
-      return `![${alt}](${GITHUB_RAW_BASE}public/${path})`;
-    });
+    text = text.replace(
+      /!\[([^\]]*)]\(\.?(?:\/)?public\/([^)\s]+)\)/g,
+      (match, alt, path) => {
+        return `![${alt}](${GITHUB_RAW_BASE}public/${path})`;
+      },
+    );
 
-    return renderMarkdownSafe(text);
+    return text;
   } catch (error) {
     console.error("❌ Failed to fetch", url);
     console.error(error);
@@ -28,10 +34,10 @@ export const fetchMd = async (name: string, fileName = 'README.md'): Promise<str
 export const extractMarkdownSection = (
   markdown: string,
   heading = "🚀 Skills & Expertise",
-): string | null => {
+): string => {
   const regex = new RegExp(`## ${heading}\\s*([\\s\\S]*?)(?=^##\\s|\\Z)`, "m");
   const match = markdown.match(regex);
-  return match ? match[1].trim() : null;
+  return match ? match[1].trim() : '';
 };
 
 export const renderMarkdownSafe = async (markdown: string): Promise<string> => {

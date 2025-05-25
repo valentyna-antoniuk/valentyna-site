@@ -1,9 +1,13 @@
 ---
 import Button from "../../../components/ReactButton/ReactButton";
-import { fetchMd, extractMarkdownSection } from "../../../helpers";
+import {
+  fetchMd,
+  extractMarkdownSection,
+  renderMarkdownSafe,
+} from "../../../helpers";
 
-const readme = await fetchMd('valentyna-antoniuk');
-const section = extractMarkdownSection(readme || "");
+const readme = await fetchMd("valentyna-antoniuk");
+const section = renderMarkdownSafe(extractMarkdownSection(readme || ""));
 ---
 
 <section>
@@ -50,6 +54,10 @@ const section = extractMarkdownSection(readme || "");
     display: flex;
     justify-content: center;
     align-items: center;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+      padding: 30px;
+      border-radius: 15px;
     @media (max-width: 1200px) {
       display: block;
     }
@@ -57,10 +65,19 @@ const section = extractMarkdownSection(readme || "");
   .skills {
     gap: 16px;
     flex: 2;
+    margin-right: 60px;
     h4 {
-      margin-top: 16px;
+        display: inline-block;
+        padding: 0 5px;
+      font-weight: 700;
       margin-bottom: 5px;
       font-size: 22px;
+      &:not(:first-child) {
+        margin-top: 25px;
+      }
+    }
+    img {
+      min-height: 30px;
     }
   }
   .more-skills {

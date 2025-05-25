@@ -18,24 +18,27 @@ This project was built with a focus on rapid development and minimal dependencie
 - **Rapid Development**: Using Astro enabled quick prototyping and seamless integration of small interactive React islands.
 - **Minimal Dependencies**: The stack consists of only essential packages, providing a low entry barrier and reducing complexity.
 - **Static by Default, SSR on Demand**: The project starts as a static site, with server-side rendering (SSR) available when needed. This ensures flexibility and scalability.
-- **Automated Deployment**: On push into the main branch;
+- **Deployment**: Automated release on push into the main branch;
 
 ## 🎨 UI / UX
+
 ### Desktop
+
 ![plot](/public/readme/mock-desktop.webp)
 
 ### Mobile
+
 ![plot](/public/readme/mock-mobile.webp)
 
 ## 💡 Project Reflection
 
-Astro proved to be an excellent choice for a simple personal website project.
-Its intuitive syntax, React island support, and effortless SSR setup made it easy to build and maintain.
-Netlify's built-in Astro support further simplified the deployment process—automated builds and releases triggered by pushes to `main` have been invaluable for streamlining development.
+**Astro** proved to be an excellent choice for a simple personal website project.
+Its intuitive syntax, **React island support**, and effortless SSR setup made it easy to build and maintain.
+**Netlify**'s built-in Astro support further simplified the deployment process—automated builds and releases triggered by pushes to `main` have been invaluable for streamlining development.
 
 ## 📅 Plans for improvements
 
-- **Pet Projects page**: with more than one example (insert emodji here with symbols);
+- **Pet Projects page**: with more than one example (⊂(◉‿◉)つ);
 - **Pet Project Details page**;
 - Improve **mobile markup**;
 - **Add SEO**:if applicable & needed with a new domain.
