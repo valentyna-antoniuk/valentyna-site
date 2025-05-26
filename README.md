@@ -33,8 +33,12 @@ This project was built with a focus on rapid development and minimal dependencie
 ## 💡 Project Reflection
 
 **Astro** proved to be an excellent choice for a simple personal website project.
+
 Its intuitive syntax, **React island support**, and effortless SSR setup made it easy to build and maintain.
-**Netlify**'s built-in Astro support further simplified the deployment process—automated builds and releases triggered by pushes to `main` have been invaluable for streamlining development.
+
+**Netlify**'s built-in Astro support further simplified the deployment process—automated builds and releases triggered by pushes to `main` have been invaluable for streamlining development. Netlify offers built-in form handling features that streamline the process of capturing and managing user submissions without requiring additional backend infrastructure. This functionality enables seamless configuration of email notifications for the contact form.
+
+> **Overall, the chosen tools proved reliable and efficient, producing outcomes that aligned well with my goals.**
 
 ## 📅 Plans for improvements
 
