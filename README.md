@@ -39,6 +39,5 @@ Its intuitive syntax, **React island support**, and effortless SSR setup made it
 ## 📅 Plans for improvements
 
 - **Pet Projects page**: with more than one example (⊂(◉‿◉)つ);
-- **Pet Project Details page**;
 - Improve **mobile markup**;
 - **Add SEO**:if applicable & needed with a new domain.
