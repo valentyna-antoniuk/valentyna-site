@@ -19,9 +19,15 @@ const { imgUrl, title, name } = Astro.props;
     <p><slot /></p>
     <p class="read-more">
       {
-        name ? (<a href={`/pet-project/${name}`}>
-          <Button firstColor="#7eb3ff" secondColor="#758cff">Read More</Button>
-        </a>) : <div class="ribbon">in development</div>
+        name ? (
+          <a href={`/pet-project/${name}`}>
+            <Button firstColor="#7eb3ff" secondColor="#758cff">
+              Read More
+            </Button>
+          </a>
+        ) : (
+          <div class="ribbon">in development</div>
+        )
       }
     </p>
   </div>
@@ -116,12 +122,12 @@ const { imgUrl, title, name } = Astro.props;
 
     .ribbon {
       background: lightskyblue;
-      color:white;
-      padding:5px 0;
+      color: white;
+      padding: 5px 0;
       font-size: 12px;
       position: absolute;
-      top:0;
-      right:0;
+      top: 0;
+      right: 0;
       transform: translateX(20%) translateY(-10%) rotate(37deg);
       transform-origin: top left;
       box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.2);
@@ -129,16 +135,16 @@ const { imgUrl, title, name } = Astro.props;
     }
     .ribbon:before,
     .ribbon:after {
-      content: '';
+      content: "";
       position: absolute;
-      top:0;
+      top: 0;
       margin: 0 -1px;
       width: 100%;
       height: 100%;
       background: lightskyblue;
     }
     .ribbon:before {
-      right:100%;
+      right: 100%;
     }
 
     @media (max-width: 1100px) {
