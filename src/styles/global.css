@@ -7,6 +7,9 @@
 b {
   font-weight: bold;
 }
+body {
+  overflow-x: hidden;
+}
 .content-container {
   width: 100%;
   margin: 0 auto;
@@ -48,13 +51,27 @@ h2 {
   background-repeat: repeat-x;
   background-size: auto 100%;
   height: 20px;
+  margin-left: -100px;
+  width: calc(100% + 100px);
+  animation: wave-move 4s linear infinite;
   &.bottom {
+    margin-left: 0;
     background-size: 100px auto;
     transform: scaleY(-1);
     position: absolute;
     bottom: -20px;
-    width: 100%;
+    animation: bottom-wave-move 4s linear infinite;
   }
+}
+
+@keyframes wave-move {
+  0%   { transform: translateX(100px); }
+  100%  { transform: translateX(0); }
+}
+
+@keyframes bottom-wave-move {
+  0%   { transform: scaleY(-1) translateX(-100px); }
+  100%  { transform: scaleY(-1) translateX(0); }
 }
 
 ::selection {
