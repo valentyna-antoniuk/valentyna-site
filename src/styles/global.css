@@ -65,13 +65,21 @@ h2 {
 }
 
 @keyframes wave-move {
-  0%   { transform: translateX(100px); }
-  100%  { transform: translateX(0); }
+  0% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 @keyframes bottom-wave-move {
-  0%   { transform: scaleY(-1) translateX(-100px); }
-  100%  { transform: scaleY(-1) translateX(0); }
+  0% {
+    transform: scaleY(-1) translateX(-100px);
+  }
+  100% {
+    transform: scaleY(-1) translateX(0);
+  }
 }
 
 ::selection {
