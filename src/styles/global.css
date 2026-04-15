@@ -7,7 +7,7 @@
 b {
   font-weight: bold;
 }
-body {
+body, main {
   overflow-x: hidden;
 }
 .content-container {
