@@ -21,7 +21,7 @@ export default function ReactContactForm() {
     }
     const body = searchParams.toString();
 
-    fetch("/", {
+    fetch("/netlify-form-hack/__forms.html", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body,
