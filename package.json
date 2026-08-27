@@ -13,7 +13,10 @@
     "build": "astro build",
     "preview": "netlify dev --context production",
     "prepare": "husky",
-    "pre-commit": "npx prettier . --write"
+    "format": "prettier . --write"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,astro,css,scss,md,json}": "prettier --write"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "7.2.4",
@@ -35,6 +38,7 @@
   "devDependencies": {
     "@astrojs/netlify": "8.2.4",
     "husky": "9.1.7",
+    "lint-staged": "17.4.1",
     "netlify-cli": "27.4.0",
     "prettier": "3.9.6",
     "prettier-plugin-astro": "0.14.1"

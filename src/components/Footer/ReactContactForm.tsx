@@ -91,7 +91,11 @@ export default function ReactContactForm() {
 
       {hasError && (
         <div
-          style={{ color: "crimson", margin: "10px 0 15px", lineHeight: "18px" }}
+          style={{
+            color: "crimson",
+            margin: "10px 0 15px",
+            lineHeight: "18px",
+          }}
         >
           <b style={{ display: "block" }}>
             ⚠️ Something went wrong sending your message.
