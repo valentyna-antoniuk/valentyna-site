@@ -1,5 +1,5 @@
 import { type PropsWithChildren } from "react";
-import "./styles.module.css";
+import "./styles.css";
 
 export default function ReactButton({
   type = "button",

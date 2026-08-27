@@ -1,13 +1,15 @@
 import { useState } from "react";
 
 import ReactButton from "../ReactButton/ReactButton";
-import "./contactForm.module.css";
+import "./contactForm.css";
 
 export default function ReactContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     setIsSubmitted(false);
+    setHasError(false);
     event.preventDefault();
 
     const form = event.currentTarget;
@@ -24,15 +26,25 @@ export default function ReactContactForm() {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body,
     })
-      .then(() => {
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Submission failed with status ${response.status}`);
+        }
         setIsSubmitted(true);
         form.reset();
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.error(error);
+        setHasError(true);
+      });
   };
 
   return (
-    <form name="contact" netlify-honeypot="bot-field" onSubmit={handleSubmit}>
+    // Netlify only detects this form because a static stub exists at
+    // public/netlify-form-hack/__forms.html (this island renders after JS, so
+    // Netlify's build-time HTML scan never sees it). The `netlify`/`netlify-honeypot`
+    // attributes live on that stub, not here. Keep field names in sync there.
+    <form name="contact" onSubmit={handleSubmit}>
       {/* Hidden field to prevent bots */}
       <div style={{ display: "none" }}>
         <input type="text" name="bot-field" />
@@ -73,6 +85,19 @@ export default function ReactContactForm() {
           </b>
           <span style={{ paddingLeft: "20px" }}>
             I'll get back to you shortly.
+          </span>
+        </div>
+      )}
+
+      {hasError && (
+        <div
+          style={{ color: "crimson", margin: "10px 0 15px", lineHeight: "18px" }}
+        >
+          <b style={{ display: "block" }}>
+            ⚠️ Something went wrong sending your message.
+          </b>
+          <span style={{ paddingLeft: "20px" }}>
+            Please try again or email me directly.
           </span>
         </div>
       )}
