@@ -1,7 +1,16 @@
 import { remark } from "remark";
 import rehype from "remark-rehype";
+import rehypeRaw from "rehype-raw";
 import stringify from "rehype-stringify";
-import sanitize from "rehype-sanitize";
+import sanitize, { defaultSchema } from "rehype-sanitize";
+
+const sanitizeSchema = {
+  ...defaultSchema,
+  attributes: {
+    ...defaultSchema.attributes,
+    img: [...(defaultSchema.attributes?.img ?? []), "height", "width"],
+  },
+};
 
 export const fetchMd = async (
   name: string,
@@ -42,8 +51,9 @@ export const extractMarkdownSection = (
 
 export const renderMarkdownSafe = async (markdown: string): Promise<string> => {
   const file = await remark()
-    .use(rehype)
-    .use(sanitize)
+    .use(rehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
+    .use(sanitize, sanitizeSchema)
     .use(stringify)
     .process(markdown);
   return String(file);
