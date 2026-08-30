@@ -8,7 +8,7 @@ const currentYear = new Date().getFullYear();
 <div class="copyright">
   <div class="content-container">
     <p>
-      Made with {heartCode}
+      Site made with {heartCode}
       <a
         href="https://helpukraine.center/"
         target="_blank"
@@ -25,13 +25,14 @@ const currentYear = new Date().getFullYear();
   .copyright {
     padding: 20px 0;
     background: #ffe6eb;
+    font-size: 12px;
+    color: dimgray;
     > div {
       display: flex;
       align-items: center;
       justify-content: space-between;
       @media (max-width: 620px) {
         display: block;
-        font-size: 12px;
         line-height: 20px;
         &:hover {
           span {
@@ -49,6 +50,7 @@ const currentYear = new Date().getFullYear();
   }
   a {
     cursor: help;
+    margin-left: 4px;
   }
   p:first-child {
     position: relative;
