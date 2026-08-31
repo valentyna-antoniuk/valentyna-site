@@ -1,8 +1,7 @@
 ---
-const images = import.meta.glob(
-  "/src/features/index/certificates/assets/*.webp",
-  { eager: true },
-);
+const images = import.meta.glob("/src/features/index/certificates/assets/*", {
+  eager: true,
+});
 const imageList = Object.values(images).map((module) => module.default);
 ---
 
