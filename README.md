@@ -9,7 +9,7 @@ An additional goal is to explore and better understand how Astro works by using 
 
 This project uses **[Astro](https://astro.build/)** for its simplicity and performance-first approach, making it ideal for small, static sites like a CV.
 **[React](https://reactjs.org/)** is integrated for building dynamic and reusable UI components with ease.
-**[CSS Modules](https://github.com/css-modules/css-modules)** offer scoped styling without the overhead of a larger styling solution, keeping the project lightweight and maintainable.
+**Astro scoped styles** are used for `.astro` components, with **[CSS/SCSS Modules](https://github.com/css-modules/css-modules)** for the React islands (where Astro scoping doesn't apply) — scoped styling without the overhead of a larger styling solution, keeping the project lightweight and maintainable.
 
 ## 🔍 Technical Overview
 
